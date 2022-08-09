@@ -1,6 +1,6 @@
 {
   "name": "use-sharable-state",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This packages makes sharing states simpler",
   "main": "index.js",
   "scripts": {
@@ -83,5 +83,12 @@
   ],
   "dependencies": {
     "uuid": "^8.3.2"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./lib/ems/index.js",
+      "require": "./lib/cjs/index.js"
+    }
   }
 }
