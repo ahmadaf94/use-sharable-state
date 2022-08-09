@@ -1,5 +1,5 @@
-/node_modules
 /example/node_modules
 /example/build
 .idea
-lib
+node_modules
+/lib
