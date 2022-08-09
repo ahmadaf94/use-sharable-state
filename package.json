@@ -1,6 +1,6 @@
 {
   "name": "use-sharable-state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This packages makes sharing states simpler",
   "main": "index.js",
   "scripts": {
