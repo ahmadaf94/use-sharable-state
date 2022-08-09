@@ -1,0 +1,81 @@
+{
+  "name": "use-sharable-state",
+  "version": "1.0.0",
+  "description": "This packages makes sharing states simpler",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sam-afshari/use-sharable-state.git"
+  },
+  "keywords": [
+    "hook",
+    "state",
+    "shared-state",
+    "global",
+    "global-state",
+    "sharable-state",
+    "use-sharable-state"
+  ],
+  "author": "Sam Afshari <samafshari1994@gmail.com> (https://github.com/Sam-Afshari)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sam-afshari/use-sharable-state/issues"
+  },
+  "homepage": "https://github.com/sam-afshari/use-sharable-state#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8 || ^17.0 || ^18.0",
+    "@types/react-dom": "^16.8 || ^17.0 || ^18.0",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "react-native": ">=0.59"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "redux": {
+      "optional": true
+    }
+  },
+  "files": [
+    "/lib"
+  ],
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
