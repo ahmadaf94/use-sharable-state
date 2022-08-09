@@ -1,12 +1,19 @@
 {
   "name": "use-sharable-state",
-  "version": "1.0.2",
+  "type": "module",
+  "version": "1.0.3",
   "description": "This packages makes sharing states simpler",
-  "main": "index.js",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "build": "microbundle",
+    "dev": "microbundle watch",
     "lint": "eslint ./src --fix",
     "prepare": "npm run build",
     "prepublishOnly": "npm run lint",
@@ -49,6 +56,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "microbundle": "^0.15.0",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -79,16 +87,9 @@
     }
   },
   "files": [
-    "/lib/**/*"
+    "/dist/**/*"
   ],
   "dependencies": {
     "uuid": "^8.3.2"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "import": "./lib/ems/index.js",
-      "require": "./lib/cjs/index.js"
-    }
   }
 }
