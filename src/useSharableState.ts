@@ -3,10 +3,13 @@ import { v4 as uuidV4 } from "uuid";
 
 import store from "./store";
 
+type Action<S> = (prevState: S) => S;
+type Dispatch<S> = (value: S | Action<S>) => void;
+
 const useSharableState = <S>(
   stateKey: string,
   initialState?: S,
-): [S, (newState: S) => void] => {
+): [S, Dispatch<S>] => {
   const setterKey = useRef(uuidV4());
 
   const initialValue = useMemo(
@@ -31,14 +34,12 @@ const useSharableState = <S>(
     return () => store.removeSetter({ stateKey, setterKey: stk });
   }, [initialValue, stateKey]);
 
-  const updateState = useCallback(
-    (value: S | ((prevState: S) => S)) => {
+  const updateState: Dispatch<S> = useCallback(
+    (value) => {
       if (typeof value === "function") {
         store.updateState({
           stateKey,
-          value: (value as (prevState: S) => S)(
-            store.getCurrentState(stateKey),
-          ),
+          value: (value as Action<S>)(store.getCurrentState(stateKey)),
         });
       } else {
         store.updateState({ stateKey, value });
