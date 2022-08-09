@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { v4 as uuidV4 } from "uuid";
 
 import store from "./store";
 
@@ -10,7 +9,7 @@ const useSharableState = <S>(
   stateKey: string,
   initialState?: S,
 ): [S, Dispatch<S>] => {
-  const setterKey = useRef(uuidV4());
+  const setterKey = useRef(store.generateId());
 
   const initialValue = useMemo(
     () => store.getCurrentState(stateKey) || initialState,

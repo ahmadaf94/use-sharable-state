@@ -1,7 +1,7 @@
 {
   "name": "use-sharable-state",
   "type": "module",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "This packages makes sharing states simpler",
   "source": "src/index.ts",
   "types": "./dist/index.d.ts",
@@ -44,7 +44,6 @@
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
     "eslint": "^7.32.0 || ^8.2.0",
@@ -89,8 +88,5 @@
   },
   "files": [
     "/dist/**/*"
-  ],
-  "dependencies": {
-    "uuid": "^8.3.2"
-  }
+  ]
 }

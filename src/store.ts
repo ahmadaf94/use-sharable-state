@@ -1,4 +1,12 @@
 const store = (<F extends (state: any) => void, S = any>() => {
+  let setterId = 0;
+
+  const generateId = () => {
+    setterId += 1;
+
+    return setterId.toString();
+  };
+
   const mappedData: { [K: string]: { value: S; setters: { [K: string]: F } } } =
     {};
 
@@ -73,6 +81,7 @@ const store = (<F extends (state: any) => void, S = any>() => {
     updateState,
     getCurrentState,
     getCurrentSetter,
+    generateId,
   };
 })();
 
