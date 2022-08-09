@@ -16,7 +16,10 @@ const FirstUserCounter = () => {
 
       <p>{count}</p>
 
-      <button type="button" onClick={() => setCount(count + 1)}>
+      <button
+        type="button"
+        onClick={() => setCount((oldCount: number) => oldCount + 1)}
+      >
         Add User
       </button>
     </div>
@@ -39,7 +42,10 @@ const SecondUserCounter = () => {
 
       <p>{count}</p>
 
-      <button type="button" onClick={() => setCount(count + 1)}>
+      <button
+        type="button"
+        onClick={() => setCount((oldCount: number) => oldCount + 1)}
+      >
         Add User
       </button>
     </div>
@@ -62,7 +68,10 @@ const FirstMessageCounter = () => {
 
       <p>{count}</p>
 
-      <button type="button" onClick={() => setCount(count + 1)}>
+      <button
+        type="button"
+        onClick={() => setCount((oldCount: number) => oldCount + 1)}
+      >
         Add Message
       </button>
     </div>
@@ -85,7 +94,10 @@ const SecondMessageCounter = () => {
 
       <p>{count}</p>
 
-      <button type="button" onClick={() => setCount(count + 1)}>
+      <button
+        type="button"
+        onClick={() => setCount((oldCount: number) => oldCount + 1)}
+      >
         Add Message
       </button>
     </div>

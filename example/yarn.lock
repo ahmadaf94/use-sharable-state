@@ -3316,10 +3316,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-sharable-state@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/use-sharable-state/-/use-sharable-state-1.0.4.tgz#910b2aee1b92095757d18d21d87fd8c7babc46a9"
-  integrity sha512-Ho/lATGJDoQPinH6MSP5wQ3npW34d2FvOq7FFK+WkZffWlZSeLtFkvrIzm0Du7sprpF11udsQHpkUtlv8FPpQA==
+use-sharable-state@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/use-sharable-state/-/use-sharable-state-1.1.1.tgz#cefeaa4ee88af198dfd21911e0432edbd4c57f09"
+  integrity sha512-MyoiTAAcAhMhgM7hqXyXmUionUa5b0NHuBc9U5nwpysogzxJt3anZS+FQb1t5XK/tcbOE1sBOTvaZljxoorxVg==
   dependencies:
     uuid "^8.3.2"
 
