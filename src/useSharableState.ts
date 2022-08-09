@@ -32,8 +32,17 @@ const useSharableState = <S>(
   }, [initialValue, stateKey]);
 
   const updateState = useCallback(
-    (newState: S) => {
-      store.updateState({ stateKey, value: newState });
+    (value: S | ((prevState: S) => S)) => {
+      if (typeof value === "function") {
+        store.updateState({
+          stateKey,
+          value: (value as (prevState: S) => S)(
+            store.getCurrentState(stateKey),
+          ),
+        });
+      } else {
+        store.updateState({ stateKey, value });
+      }
     },
     [stateKey],
   );
