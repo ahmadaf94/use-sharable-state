@@ -1,10 +1,9 @@
 const store = (<F extends (state: any) => void, S = any>() => {
-  let setterId = 0;
-
   const generateId = () => {
-    setterId += 1;
-
-    return setterId.toString();
+    return (Date.now().toString(36) + Math.random().toString(36)).replace(
+      /\./g,
+      "",
+    );
   };
 
   const mappedData: { [K: string]: { value: S; setters: { [K: string]: F } } } =
