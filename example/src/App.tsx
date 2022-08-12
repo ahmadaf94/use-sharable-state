@@ -1,7 +1,9 @@
 import { useSharableState } from "use-sharable-state";
 
-const FirstUserCounter = () => {
-  const [count, setCount] = useSharableState("userCounter", 0);
+import useMessageCounter from "./hooks/useMessageCounter";
+
+const FirstCounter = () => {
+  const [count, setCount] = useSharableState("Counter", 0);
 
   return (
     <div
@@ -12,7 +14,7 @@ const FirstUserCounter = () => {
         alignItems: "center",
       }}
     >
-      <h1>User Counter #1</h1>
+      <h1>Counter #1</h1>
 
       <p>{count}</p>
 
@@ -20,14 +22,14 @@ const FirstUserCounter = () => {
         type="button"
         onClick={() => setCount((oldCount: number) => oldCount + 1)}
       >
-        Add User
+        Add
       </button>
     </div>
   );
 };
 
-const SecondUserCounter = () => {
-  const [count, setCount] = useSharableState("userCounter", 0);
+const SecondCounter = () => {
+  const [count, setCount] = useSharableState("Counter", 0);
 
   return (
     <div
@@ -38,7 +40,7 @@ const SecondUserCounter = () => {
         alignItems: "center",
       }}
     >
-      <h1>User Counter #2</h1>
+      <h1>Counter #2</h1>
 
       <p>{count}</p>
 
@@ -46,14 +48,14 @@ const SecondUserCounter = () => {
         type="button"
         onClick={() => setCount((oldCount: number) => oldCount + 1)}
       >
-        Add User
+        Add
       </button>
     </div>
   );
 };
 
 const FirstMessageCounter = () => {
-  const [count, setCount] = useSharableState("messageCounter", 0);
+  const { count, increase, decrease } = useMessageCounter();
 
   return (
     <div
@@ -66,20 +68,21 @@ const FirstMessageCounter = () => {
     >
       <h1>Message Counter #1</h1>
 
-      <p>{count}</p>
+      <p>Total Messages: {count}</p>
 
-      <button
-        type="button"
-        onClick={() => setCount((oldCount: number) => oldCount + 1)}
-      >
+      <button type="button" onClick={increase}>
         Add Message
+      </button>
+
+      <button type="button" onClick={decrease}>
+        Remove Message
       </button>
     </div>
   );
 };
 
 const SecondMessageCounter = () => {
-  const [count, setCount] = useSharableState("messageCounter", 0);
+  const { count, increase, decrease } = useMessageCounter();
 
   return (
     <div
@@ -92,13 +95,14 @@ const SecondMessageCounter = () => {
     >
       <h1>Message Counter #2</h1>
 
-      <p>{count}</p>
+      <p>Total Messages: {count}</p>
 
-      <button
-        type="button"
-        onClick={() => setCount((oldCount: number) => oldCount + 1)}
-      >
+      <button type="button" onClick={increase}>
         Add Message
+      </button>
+
+      <button type="button" onClick={decrease}>
+        Remove Message
       </button>
     </div>
   );
@@ -114,11 +118,11 @@ const App = () => (
       gap: "1rem",
     }}
   >
-    <FirstUserCounter />
+    <FirstCounter />
 
     <FirstMessageCounter />
 
-    <SecondUserCounter />
+    <SecondCounter />
 
     <SecondMessageCounter />
   </div>

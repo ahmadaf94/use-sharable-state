@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "use-sharable-state": "^1.1.1"
+    "use-sharable-state": "file:.."
   },
   "devDependencies": {
     "@types/react": "^18.0.15",

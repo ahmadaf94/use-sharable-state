@@ -3316,17 +3316,8 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-sharable-state@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/use-sharable-state/-/use-sharable-state-1.1.1.tgz#cefeaa4ee88af198dfd21911e0432edbd4c57f09"
-  integrity sha512-MyoiTAAcAhMhgM7hqXyXmUionUa5b0NHuBc9U5nwpysogzxJt3anZS+FQb1t5XK/tcbOE1sBOTvaZljxoorxVg==
-  dependencies:
-    uuid "^8.3.2"
-
-uuid@^8.3.2:
-  version "8.3.2"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
-  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+"use-sharable-state@file:..":
+  version "1.1.2"
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"
