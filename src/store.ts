@@ -75,13 +75,28 @@ const store = (<F extends (state: any) => void, S = any>() => {
     return mappedData[stateKey]?.setters[setterKey];
   };
 
+  const clearStates = () => {
+    Object.entries(mappedData).forEach(([stateKey, state]) => {
+      if (state.setters) {
+        Object.entries(state.setters).forEach(([, setter]) => {
+          setter(undefined);
+        });
+      }
+
+      delete mappedData[stateKey];
+    });
+  };
+
   return {
+    mappedData,
+
     addSetter,
     removeSetter,
     updateState,
     getCurrentState,
     getCurrentSetter,
     generateId,
+    clearStates,
   };
 })();
 

@@ -1,1 +1,1 @@
-export { default as useSharableState } from "./useSharableState";
+export * from "./useSharableState";

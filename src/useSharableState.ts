@@ -3,9 +3,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import store from "./store";
 
 type Action<S> = (prevState: S) => S;
-type Dispatch<S> = (value: S | Action<S>) => void;
+export type Dispatch<S> = (value: S | Action<S>) => void;
 
-const useSharableState = <S>(
+export const useSharableState = <S>(
   stateKey: string,
   initialState?: S,
 ): [S, Dispatch<S>] => {
@@ -19,16 +19,16 @@ const useSharableState = <S>(
   const [state, setState] = useState<S>(initialValue);
 
   useEffect(() => {
+    const stk = setterKey.current;
+
     if (!store.getCurrentSetter({ stateKey, setterKey: setterKey.current })) {
       store.addSetter({
         stateKey,
         initialValue,
         setter: setState,
-        setterKey: setterKey.current,
+        setterKey: stk,
       });
     }
-
-    const stk = setterKey.current;
 
     return () => store.removeSetter({ stateKey, setterKey: stk });
   }, [initialValue, stateKey]);
@@ -49,5 +49,3 @@ const useSharableState = <S>(
 
   return [state, updateState];
 };
-
-export default useSharableState;
