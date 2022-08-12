@@ -70,10 +70,10 @@
     "vitest": "^0.21.1"
   },
   "peerDependencies": {
-    "@types/react": "^16.8 || ^17.0 || ^18.0",
-    "@types/react-dom": "^16.8 || ^17.0 || ^18.0",
-    "react": "^16.8 || ^17.0 || ^18.0",
-    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "@types/react": ">=16.8",
+    "@types/react-dom": ">=16.8",
+    "react": ">=16.8",
+    "react-dom": ">=16.8",
     "react-native": ">=0.59"
   },
   "peerDependenciesMeta": {
