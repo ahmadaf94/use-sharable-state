@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/Sam-Afshari/use-sharable-state/compare/v1.0.0...v2.0.0) (2022-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* better unique id generator
+
+### Bug Fixes
+
+* fix peer deps versions and test workflow ([45daf45](https://github.com/Sam-Afshari/use-sharable-state/commit/45daf450b6ef2de0a22e065f11539bb1731f2131))
+
+
+### Code Refactoring
+
+* better unique id generator ([48716ff](https://github.com/Sam-Afshari/use-sharable-state/commit/48716ff9b49f852a84a0176ba1ec629131c54404))
+
 ## 1.0.0 (2022-08-12)
 
 
