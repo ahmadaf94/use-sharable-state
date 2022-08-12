@@ -1,7 +1,7 @@
 {
   "name": "use-sharable-state",
   "type": "module",
-  "version": "1.1.2",
+  "version": "1.0.0",
   "description": "This packages makes sharing states simpler",
   "source": "src/index.ts",
   "types": "./dist/index.d.ts",
