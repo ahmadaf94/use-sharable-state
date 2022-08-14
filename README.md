@@ -39,7 +39,7 @@ const CounterComponent = () => {
   const [count, setCount] = useSharableState(COUNTER_STATE_KEY, 0);
 
   const increaseCounter = useCallback(() => {
-    setCount((oldCount) => oldCount + 1) // or setCount(count + 1~~~~)
+    setCount((oldCount) => oldCount + 1) // or setCount(count + 1)
   }, [setCount])
 
   return (
@@ -82,4 +82,35 @@ const useMessageCounter = () => {
 export default useMessageCounter;
 ```
 
+---
+
+# API Reference
+### useSharableState
+
+A react hook that adds a state to the component which it's value is shared between similar usages with the same `stateKey`
+
+#### Props
+
+| Prop          | Type   | Optional/Required |
+|---------------|--------|-----------------|
+| stateKey      | string | required        |
+| initialState* | any    | optional        |
+
+*: if the shared state has a value before, provided initialState will not be used.
+
+#### Returns
+
+```ts
+import { useSharableState } from "use-sharable-state";
+
+type State = {...}
+
+const [state, setState]: [State, (nextState: State | ((prevState: State) => State)) => void] = useSharableState<State>(stateKey, initialState);
+```
+
+---
+
+## License
+
+[MIT](LICENSE)
 
