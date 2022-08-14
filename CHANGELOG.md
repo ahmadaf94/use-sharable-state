@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.1](https://github.com/Sam-Afshari/use-sharable-state/compare/v2.0.0...v2.0.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* change report format to lcov ([29bfb66](https://github.com/Sam-Afshari/use-sharable-state/commit/29bfb6627de43db621480e51711dd1e9018a4abe))
+* fixing codecov ([4bc9b3b](https://github.com/Sam-Afshari/use-sharable-state/commit/4bc9b3b40101e84facccc9f154a887d598dc05e7))
+* fixing codecov ([27457c0](https://github.com/Sam-Afshari/use-sharable-state/commit/27457c01d5ec515e178684bac6cc874ed4ac7495))
+* fixing codecov workflow ([41600bd](https://github.com/Sam-Afshari/use-sharable-state/commit/41600bd9c40bd6386ebc301d2b180029488b6e18))
+
 ## [2.0.0](https://github.com/Sam-Afshari/use-sharable-state/compare/v1.0.0...v2.0.0) (2022-08-12)
 
 
